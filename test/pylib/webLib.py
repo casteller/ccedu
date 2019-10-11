@@ -8,7 +8,7 @@ class webLib(object):
     def __init__(self):
         pass
     #打开浏览器
-    def open_browser(self):
+    def openb_rowser(self):
         self.wd = webdriver.Chrome()
         self.wd.maximize_window()
         self.wd.implicitly_wait(10)
@@ -42,8 +42,7 @@ class webLib(object):
         self.wd.find_element_by_xpath("//div/textarea[@ng-model='lecturer.introduction']").send_keys("资深物理老师")
         self.wd.find_element_by_xpath("//div/button[@ng-click='save()']").click()
     #添加课件
-    def addcourseware(self):
-        self.wd.refresh()
+    def addkejian(self):
         self.wd.find_element_by_xpath("//ul[contains(@class,'main')]/li[6]//div/span").click()
         self.wd.find_element_by_xpath("//ul[contains(@class,'main')]/li[6]//ul[1]//li[1]//span").click()
         time.sleep(2)
@@ -56,33 +55,9 @@ class webLib(object):
         self.wd.find_element_by_xpath("//div/button[@ng-click='save()']").click()
         self.wd.find_element_by_xpath("//div/button[@ng-click='back()']").click()
 
-    #添加课程设计
-    def coursedesign(self):
-        self.wd.find_element_by_xpath("//ul[contains(@class,'main')]/li[6]//div/span").click()
-        self.wd.find_element_by_xpath("//ul[contains(@class,'main')]/li[6]//ul[1]//li[3]//span").click()
-        time.sleep(2)
-        self.wd.find_element_by_xpath("//div[@id='container']//div[@ng-controller='courseManegerListCtrl']//div[@class='row'][1]//button[1]").click()
-        self.wd.find_element_by_xpath("//div/input[@ng-model='p.name']").send_keys("课程名称")
-        time.sleep(1)
-        self.wd.find_element_by_xpath("//div[@ng-model='p.specialty']").click()
-        self.wd.find_element_by_xpath("//div[@ng-model='p.specialty']//ul//li//div[3]/a").click()
-        self.wd.find_element_by_xpath("//div[@ng-model='p.type']").click()
-        self.wd.find_element_by_xpath("//div[@ng-model='p.type']//ul//li//div[3]/a").click()
-        self.wd.find_element_by_xpath("//div[@ng-model='p.teachType']").click()
-        self.wd.find_element_by_xpath("//div[@ng-model='p.teachType']//ul//li//div[3]/a").click()
-        self.wd.find_element_by_xpath("//input[@ng-model='p.learnTime']").send_keys("12")
-        self.wd.find_element_by_xpath("//input[@ng-model='p.learnScore']").send_keys("100")
-        self.wd.find_element_by_xpath("//div[@ng-model='p.scoreType']").click()
-        self.wd.find_element_by_xpath("//div[@ng-model='p.scoreType']//ul//li//div[3]/a").click()
-        self.wd.find_element_by_xpath("//input[@ng-model='p.target']").send_keys("课程目标")
-        self.wd.find_element_by_xpath("//textarea[@ng-model='p.explain']").send_keys("课程简介")
-        self.wd.find_element_by_xpath("//textarea[@ng-model='p.content']").send_keys("课程内容")
-        self.wd.find_element_by_xpath("//button[@ng-click='submit()']").click()
-
 if __name__ == '__main__':
-    op = webLib()
-    op.open_browser()
-    op.login("zhangqingqin","1qaz@WSX")
+     op = webLib()
+     op.openb_rowser()
+     op.login("zhangqingqin","1qaz@WSX")
     # op.addteacher()
-    # op.addcourseware()
-    op.coursedesign()
+    # op.addkejian()

@@ -1,11 +1,11 @@
 *** Settings ***
-Library    pylib.webLib
-Suite Setup    open browser
+Library    pylib.studyLib
+
+
 *** Test Cases ***
 添加讲师 - tc001
-    login    zhangqingqin      1qaz@WSX
-    addteacher
+    get_cookie
+    addteacher  马云  阿里  阿里巴巴  总裁
 
 
-添加课件 - tc002
-    addcourseware
+
