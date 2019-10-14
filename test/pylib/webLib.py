@@ -1,5 +1,5 @@
 # coding=utf-8
-from ccsedu.cfg  import *
+from ccedu.cfg  import *
 from selenium import webdriver
 import time
 from selenium.webdriver import ActionChains
@@ -8,7 +8,7 @@ class webLib(object):
     def __init__(self):
         pass
     #打开浏览器
-    def openb_rowser(self):
+    def open_browser(self):
         self.wd = webdriver.Chrome()
         self.wd.maximize_window()
         self.wd.implicitly_wait(10)
@@ -18,14 +18,18 @@ class webLib(object):
     #登录
     def login(self,username,password):
         self.wd.get(loginurl)
-        self.wd.find_element_by_xpath("//div[@class='box-login']//div//select/option[2]").click()
         self.wd.find_element_by_name("username").send_keys(username)
         self.wd.find_element_by_name("password").send_keys(password)
         self.wd.find_element_by_xpath("//button").click()
+    #切换到后台管理
+    def changeback(self):
+        self.wd.find_element_by_xpath("//div[@class='edu-header-user']").click()
+        self.wd.find_element_by_xpath("//div[@class='edu-header-user']//li[1]").click()
+
     #添加老师
     def addteacher(self):
-        self.wd.find_element_by_xpath("//ul[contains(@class,'main')]/li[5]//div/span").click()
-        self.wd.find_element_by_xpath("//ul[contains(@class,'main')]/li[5]//ul//span").click()
+        self.wd.find_element_by_xpath("//ul[contains(@class,'main')]/li[3]//div/span").click()
+        self.wd.find_element_by_xpath("//ul[contains(@class,'main')]/li[3]//ul//span").click()
         time.sleep(2)
         self.wd.find_element_by_xpath("//div[@ng-controller='lecturerListController']//div[2]/button[1]").click()
         self.wd.find_element_by_xpath("//div/input[@ng-model='lecturer.name']").send_keys("李睿")
@@ -57,7 +61,9 @@ class webLib(object):
 
 if __name__ == '__main__':
      op = webLib()
-     op.openb_rowser()
+     op.open_browser()
      op.login("zhangqingqin","1qaz@WSX")
+     op.changeback()
+     op.addteacher()
     # op.addteacher()
     # op.addkejian()
