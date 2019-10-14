@@ -1,5 +1,5 @@
 # coding=utf-8
-from ccedu.cfg  import *
+from cfg  import *
 from selenium import webdriver
 import time
 from selenium.webdriver import ActionChains
