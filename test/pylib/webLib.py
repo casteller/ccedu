@@ -62,7 +62,7 @@ class webLib(object):
 if __name__ == '__main__':
      op = webLib()
      op.open_browser()
-     op.login("zhangqingqin","1qaz@WSX")
+     op.login("zhangqingqin","tfwsdx@2019")
      op.changeback()
      op.addteacher()
     # op.addteacher()

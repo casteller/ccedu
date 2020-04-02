@@ -2,7 +2,7 @@
 import requests,json,time
 from pprint import pprint
 class  studyLib(object):
-    ip = "10.206.20.47:8097"
+    ip = "10.206.1.168:8084"
     time = time.strftime("%Y-%m-%d", time.localtime())
     def header(self):
         headers = {
@@ -16,7 +16,7 @@ class  studyLib(object):
     def get_cookie(self):
         session = requests.Session()
         url = "http://"+self.ip+"/ccsedu/a/login.do"
-        payload = {'args': None, 'usertype':2, 'username':'zhangqingqin', 'password':'1qaz@WSX'}
+        payload = {'args': None, 'usertype':2, 'username':'zhangqingqin', 'password':'tfwsdx@2019'}
         session.post(url,data=payload)
         s = session.cookies.get_dict()
         print(s['APP_SESSIONID'])

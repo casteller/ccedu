@@ -9,7 +9,7 @@ Suite Teardown   close browser
 #    addteacher  马云  阿里  阿里巴巴  总裁
 
 添加讲师 - tc002
-    login   zhangqingqin    1qaz@WSX
+    login   zhangqingqin    tfwsdx@2019
     changeback
     addteacher
 
